@@ -6,13 +6,12 @@ int n,f[30][30],m[30],temp,dp[30],pre[30],ans=-INF,pos,len,list[30];
 int main()
 {
     scanf("%d",&n);
-    for(int i=1;i<=n;i++) scanf("%d",&m[i]);
+    for(int i=1;i<=n;i++) { 
+        scanf("%d",&m[i]); 
+        dp[i]=m[i]; 
+    }
     for(int i=1;i<=n-1;i++)
-        for(int j=i+1;j<=n;j++) {
-            scanf("%d",&temp);
-            if( temp==1 ) f[i][j]=f[j][i]=1; 
-        }
-    dp[1]=m[1];
+        for(int j=i+1;j<=n;j++) scanf("%d",&f[i][j]);
     for(int i=2;i<=n;i++) {
         for(int j=1;j<=i-1;j++) {
             if( f[j][i] )
